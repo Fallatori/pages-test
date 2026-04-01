@@ -1,3 +1,5 @@
 theme: minima
 title: My Site
 description: My first Jekyll site
+baseurl: "/pages-test"
+url: "https://Fallatori.github.io"
