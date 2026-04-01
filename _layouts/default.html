@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 700px;
+        margin: 2rem auto;
+        padding: 1rem;
+        background: #fafafa;
+        color: #222;
+      }
+      header {
+        margin-bottom: 2rem;
+      }
+      nav a {
+        margin-right: 1rem;
+        color: #0366d6;
+        text-decoration: none;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      footer {
+        margin-top: 2rem;
+        font-size: 0.9em;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>{{ site.title }}</h1>
+      <nav>
+        <a href="/">Home</a>
+      </nav>
+    </header>
+    <main>{{ content }}</main>
+    <footer>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</footer>
+  </body>
+</html>
