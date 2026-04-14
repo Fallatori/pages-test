@@ -1,0 +1,12 @@
+{
+  "title": "Company Name",
+  "tagline": "Building something amazing",
+  "email": "hello@company.com",
+  "phone": "",
+  "address": "",
+  "social": {
+    "twitter": "",
+    "linkedin": "",
+    "github": ""
+  }
+}

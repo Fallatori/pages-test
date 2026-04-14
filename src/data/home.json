@@ -1,0 +1,19 @@
+{
+  "heroTitle": "Welcome to Our Project",
+  "heroSubtitle": "We're building something incredible — and we'd love to show you.",
+  "heroImageUrl": "https://picsum.photos/seed/hero/1600/900",
+  "content": [
+    {
+      "_type": "block",
+      "_key": "intro",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s1",
+          "text": "We are a team of passionate individuals working on a project that we believe will make a real difference. Explore our site to learn more about what we're building and who we are."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Our Project",
+  "heroImageUrl": "https://picsum.photos/seed/project/1600/700",
+  "content": [
+    {
+      "_type": "block",
+      "_key": "p1",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s1",
+          "text": "This is where the project description goes. Describe what your project is, what problem it solves, and why it matters. This content is managed through Sanity CMS."
+        }
+      ]
+    }
+  ],
+  "features": [
+    { "_key": "f1", "title": "Feature One", "description": "A brief description of this key feature or highlight of the project." },
+    { "_key": "f2", "title": "Feature Two", "description": "Another important aspect of the project worth highlighting to visitors." },
+    { "_key": "f3", "title": "Feature Three", "description": "A third key strength or capability that sets this project apart." }
+  ]
+}

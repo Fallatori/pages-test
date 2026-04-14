@@ -1,0 +1,8 @@
+node_modules
+studio/node_modules
+dist
+studio/dist
+.env
+.env.local
+.env.*.local
+.DS_Store
