@@ -16,15 +16,17 @@ function PartnerCard({ partner, gradientIndex }) {
   const card = (
     <div className="group flex flex-col rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full">
       {/* Logo zone — white, generous padding, any aspect ratio fits */}
-      <div className="bg-white flex items-center justify-center px-8 py-6 h-36 shrink-0">
+      <div className="bg-white h-36 shrink-0 p-6">
         {partner.logoUrl ? (
           <img
             src={partner.logoUrl}
             alt={`${partner.name} logo`}
-            className="max-w-full max-h-full object-contain"
+            className="block w-full h-full object-contain"
           />
         ) : (
-          <span className="text-5xl">{partner.flag}</span>
+          <div className="flex items-center justify-center h-full">
+            <span className="text-5xl">{partner.flag}</span>
+          </div>
         )}
       </div>
 

@@ -140,7 +140,7 @@ writeFileSync('src/data/partners.json', JSON.stringify(
     country: p.country || '',
     flag: p.flag || '',
     description: p.description || '',
-    logoUrl: urlFor(p.logo, 400, 200),
+    logoUrl: urlFor(p.logo, 600),
     website: p.website || null,
   })),
   null, 2
