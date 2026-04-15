@@ -40,6 +40,7 @@ function toDoc(type, id, fields) {
 async function seed() {
   const settings = readJson('settings.json')
   const home = readJson('home.json')
+  const about = readJson('about.json')
   const news = readJson('news.json')
   const partners = readJson('partners.json')
   const demos = readJson('demos.json')
@@ -72,6 +73,27 @@ async function seed() {
       description: c.description,
     })),
     newsletterUrl: home.newsletterUrl || '',
+  }))
+
+  // --- aboutPage (singleton) ---
+  docs.push(toDoc('aboutPage', 'aboutPage', {
+    title: about.title,
+    subtitle: about.subtitle,
+    overview: about.overview,
+    components: (about.components || []).map((c, i) => ({
+      _key: `about-component-${i}`,
+      id: { _type: 'slug', current: c.id },
+      title: c.title,
+      description: c.description,
+    })),
+    objectives: (about.objectives || []).map((o, i) => ({
+      _key: `objective-${i}`,
+      number: o.number,
+      title: o.title,
+      description: o.description,
+    })),
+    glossaryNote: about.glossaryNote,
+    funding: about.funding,
   }))
 
   // --- newsArticle documents ---

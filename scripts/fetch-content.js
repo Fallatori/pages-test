@@ -42,6 +42,7 @@ console.log(`Fetching content from Sanity (project: ${projectId}, dataset: ${dat
 const [
   settings,
   home,
+  about,
   news,
   partners,
   demos,
@@ -50,6 +51,7 @@ const [
 ] = await Promise.all([
   client.fetch(`*[_type == "siteSettings"][0]`),
   client.fetch(`*[_type == "homePage"][0]`),
+  client.fetch(`*[_type == "aboutPage"][0]`),
   client.fetch(`*[_type == "newsArticle"] | order(date desc)`),
   client.fetch(`*[_type == "partner"] | order(order asc, name asc)`),
   client.fetch(`*[_type == "demoSite"] | order(order asc)`),
@@ -92,6 +94,30 @@ writeFileSync('src/data/home.json', JSON.stringify({
     type: d.type || '',
   })),
   newsletterUrl: home?.newsletterUrl || '',
+}, null, 2))
+
+// --- about.json ---
+writeFileSync('src/data/about.json', JSON.stringify({
+  title: about?.title || 'About TOGETHER',
+  subtitle: about?.subtitle || '',
+  overview: about?.overview || '',
+  components: (about?.components || []).map(c => ({
+    id: c.id?.current || c._key,
+    title: c.title || '',
+    description: c.description || '',
+  })),
+  objectives: (about?.objectives || []).map(o => ({
+    number: o.number,
+    title: o.title || '',
+    description: o.description || '',
+  })),
+  glossaryNote: about?.glossaryNote || '',
+  funding: {
+    program: about?.funding?.program || '',
+    grantNumber: about?.funding?.grantNumber || '',
+    startDate: about?.funding?.startDate || '',
+    duration: about?.funding?.duration || '',
+  },
 }, null, 2))
 
 // --- news.json ---
@@ -167,6 +193,7 @@ writeFileSync('src/data/materials.json', JSON.stringify(
 
 console.log('✓ settings.json')
 console.log('✓ home.json')
+console.log('✓ about.json')
 console.log(`✓ news.json (${(news || []).length} articles)`)
 console.log(`✓ partners.json (${(partners || []).length} partners)`)
 console.log(`✓ demos.json (${(demos || []).length} sites)`)

@@ -1,5 +1,6 @@
 import siteSettings from './siteSettings.js'
 import homePage from './homePage.js'
+import aboutPage from './aboutPage.js'
 import newsArticle from './newsArticle.js'
 import partner from './partner.js'
 import demoSite from './demoSite.js'
@@ -15,6 +16,7 @@ export const schemaTypes = [
   // Singleton settings
   siteSettings,
   homePage,
+  aboutPage,
   // TOGETHER content types
   newsArticle,
   partner,
