@@ -62,9 +62,9 @@ GitHub Actions secrets needed: `SANITY_PROJECT_ID`, `SANITY_TOKEN`.
 4. Add `SANITY_PROJECT_ID` secret to GitHub repo settings
 5. Set up a Sanity webhook: POST to `https://api.github.com/repos/Fallatori/pages-test/dispatches` with `event_type: sanity-update` and a GitHub PAT as the Bearer token
 
-## Contact Form
+## Newsletter Signup
 
-The Contact page uses Formspree (free tier). Sign up at formspree.io, create a form, and replace `YOUR_FORM_ID` in [src/pages/Contact.jsx](src/pages/Contact.jsx).
+The Contact page has a Mailchimp newsletter signup form. Replace `YOUR_MAILCHIMP_URL` in [src/pages/Contact.jsx](src/pages/Contact.jsx) with the form action URL from Mailchimp → Audience → Signup forms → Embedded forms.
 
 ## Custom Domain
 

@@ -64,65 +64,38 @@ export default function Contact() {
           )}
         </div>
 
-        {/* Contact form */}
+        {/* Newsletter signup */}
         <div>
-          <h2 className="text-xl font-semibold mb-5 text-gray-900">Send a Message</h2>
-          {/* Sign up at formspree.io, create a form, and replace YOUR_FORM_ID below */}
+          <h2 className="text-xl font-semibold mb-2 text-gray-900">Stay Updated</h2>
+          <p className="text-gray-500 text-sm mb-5">
+            Subscribe to our newsletter for the latest news and updates.
+          </p>
+          {/* Replace the action URL with your Mailchimp form action URL.
+              Find it in Mailchimp → Audience → Signup forms → Embedded forms */}
           <form
-            action="https://formspree.io/f/YOUR_FORM_ID"
+            action="YOUR_MAILCHIMP_URL"
             method="POST"
-            className="space-y-4"
+            target="_blank"
+            className="space-y-3"
           >
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                required
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-              />
+            <input
+              type="email"
+              name="EMAIL"
+              placeholder="Your email address"
+              required
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            {/* Mailchimp bot protection — do not remove */}
+            <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
+              <input type="text" name="b_placeholder" tabIndex="-1" defaultValue="" />
             </div>
             <button
               type="submit"
               className="w-full bg-gray-900 text-white py-2.5 rounded-lg font-medium hover:bg-gray-700 transition-colors"
             >
-              Send Message
+              Subscribe
             </button>
           </form>
-          <p className="text-xs text-gray-400 mt-3">
-            Form powered by{' '}
-            <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" className="underline">
-              Formspree
-            </a>
-            . Sign up free and replace YOUR_FORM_ID in Contact.jsx.
-          </p>
         </div>
       </div>
     </div>
