@@ -7,8 +7,8 @@ export default defineConfig({
   name: 'default',
   title: 'Together EU Project CMS',
 
-  projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
-  dataset: import.meta.env.VITE_SANITY_DATASET || 'production',
+  projectId: 'lu4u6ddc',
+  dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
   schema: { types: schemaTypes },
