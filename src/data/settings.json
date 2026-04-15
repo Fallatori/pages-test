@@ -1,12 +1,12 @@
 {
-  "title": "Company Name",
-  "tagline": "Building something amazing",
-  "email": "hello@company.com",
+  "title": "TOGETHER",
+  "tagline": "Towards Enhanced Coordination of Disaster Risk Management",
+  "email": "together-project@norsar.no",
   "phone": "",
   "address": "",
   "social": {
-    "twitter": "",
-    "linkedin": "",
-    "github": ""
+    "github": "",
+    "linkedin": "https://www.linkedin.com/company/110340342/",
+    "twitter": ""
   }
 }

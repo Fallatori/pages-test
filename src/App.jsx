@@ -2,9 +2,12 @@ import { HashRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import Project from './pages/Project'
-import Gallery from './pages/Gallery'
-import Team from './pages/Team'
+import About from './pages/About'
+import News from './pages/News'
+import Partners from './pages/Partners'
+import Demos from './pages/Demos'
+import Events from './pages/Events'
+import Materials from './pages/Materials'
 import Contact from './pages/Contact'
 
 export default function App() {
@@ -15,9 +18,12 @@ export default function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/project" element={<Project />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/team" element={<Team />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/partners" element={<Partners />} />
+            <Route path="/demos" element={<Demos />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/materials" element={<Materials />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

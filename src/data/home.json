@@ -1,19 +1,73 @@
 {
-  "heroTitle": "Welcome to Our Project",
-  "heroSubtitle": "We're building something incredible — and we'd love to show you.",
-  "heroImageUrl": "https://picsum.photos/seed/hero/1600/900",
-  "content": [
+  "heroTitle": "TOGETHER",
+  "heroSubtitle": "Strengthening!! disaster risk management governance by improving how authorities, sectoral actors, businesses and communities coordinate before and during crises.",
+  "heroImageUrl": null,
+  "stats": [
     {
-      "_type": "block",
-      "_key": "intro",
-      "style": "normal",
-      "children": [
-        {
-          "_type": "span",
-          "_key": "s1",
-          "text": "We are a team of passionate individuals working on a project that we believe will make a real difference. Explore our site to learn more about what we're building and who we are."
-        }
-      ]
+      "value": "20",
+      "label": "Partner Organisations"
+    },
+    {
+      "value": "9",
+      "label": "Countries"
+    },
+    {
+      "value": "5",
+      "label": "Pilot Sites"
     }
-  ]
+  ],
+  "aboutTeaser": "TOGETHER is a Horizon Europe research project that addresses fragmented disaster risk governance through multi-level coordination. We develop a toolkit combining interoperability frameworks, an AI-powered system, and governance solutions — tested across Innovation Hubs in Greece, Norway, Spain, Portugal, and Türkiye.",
+  "components": [
+    {
+      "id": "interoperability",
+      "icon": "🔗",
+      "title": "Interoperability Frameworks",
+      "description": "FAIR data frameworks enabling secure, seamless information exchange across institutions and sectors."
+    },
+    {
+      "id": "ai-system",
+      "icon": "🤖",
+      "title": "Multi-Tool AI System",
+      "description": "An AI-powered system generating scientific insights and situational awareness to support decision-making during crises."
+    },
+    {
+      "id": "governance",
+      "icon": "🏛️",
+      "title": "Governance Solutions",
+      "description": "Novel public-private-civil partnership models that implement polycentric governance for disaster risk management."
+    }
+  ],
+  "pilotTeasers": [
+    {
+      "city": "Oslo",
+      "country": "Norway",
+      "flag": "🇳🇴",
+      "type": "Innovation Hub"
+    },
+    {
+      "city": "Orihuela",
+      "country": "Spain",
+      "flag": "🇪🇸",
+      "type": "Innovation Hub"
+    },
+    {
+      "city": "Egaleo",
+      "country": "Greece",
+      "flag": "🇬🇷",
+      "type": "Innovation Hub"
+    },
+    {
+      "city": "Lisbon",
+      "country": "Portugal",
+      "flag": "🇵🇹",
+      "type": "Replication Study"
+    },
+    {
+      "city": "Istanbul",
+      "country": "Türkiye",
+      "flag": "🇹🇷",
+      "type": "Replication Study"
+    }
+  ],
+  "newsletterUrl": "https://mailchi.mp/a3f0bd314358/together-newsletter"
 }

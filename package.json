@@ -7,8 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "fetch": "node scripts/fetch-content.js",
-    "build:full": "node scripts/fetch-content.js && vite build"
+    "fetch": "node --env-file=.env scripts/fetch-content.js",
+    "build:full": "node scripts/fetch-content.js && vite build",
+    "seed": "node --env-file=.env scripts/seed-sanity.js"
   },
   "dependencies": {
     "@portabletext/react": "^3.1.0",

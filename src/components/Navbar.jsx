@@ -3,10 +3,12 @@ import { NavLink } from 'react-router-dom'
 import settings from '../data/settings.json'
 
 const links = [
-  { label: 'Home', to: '/' },
-  { label: 'Project', to: '/project' },
-  { label: 'Gallery', to: '/gallery' },
-  { label: 'Team', to: '/team' },
+  { label: 'About', to: '/about' },
+  { label: 'News', to: '/news' },
+  { label: 'Partners', to: '/partners' },
+  { label: 'Demos & Pilots', to: '/demos' },
+  { label: 'Events', to: '/events' },
+  { label: 'Materials', to: '/materials' },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -16,22 +18,22 @@ export default function Navbar() {
   const linkClass = ({ isActive }) =>
     `block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
       isActive
-        ? 'text-white bg-gray-700'
+        ? 'text-white bg-blue-700'
         : 'text-gray-300 hover:text-white hover:bg-gray-700'
     }`
 
   return (
-    <nav className="bg-gray-900 sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4">
+    <nav className="bg-slate-900 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <NavLink to="/" className="text-white font-bold text-lg tracking-tight">
-            {settings.title}
+          <NavLink to="/" className="flex items-center gap-2 text-white font-bold text-lg tracking-tight">
+            <span className="text-blue-400">TOGETHER</span>
           </NavLink>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1">
             {links.map((link) => (
-              <NavLink key={link.to} to={link.to} className={linkClass} end={link.to === '/'}>
+              <NavLink key={link.to} to={link.to} className={linkClass}>
                 {link.label}
               </NavLink>
             ))}
@@ -39,7 +41,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-gray-300 hover:text-white p-2 rounded-md"
+            className="lg:hidden text-gray-300 hover:text-white p-2 rounded-md"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -55,13 +57,20 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="md:hidden pb-3 space-y-1">
+          <div className="lg:hidden pb-3 space-y-1">
+            <NavLink
+              to="/"
+              className={linkClass}
+              end
+              onClick={() => setOpen(false)}
+            >
+              Home
+            </NavLink>
             {links.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
                 className={linkClass}
-                end={link.to === '/'}
                 onClick={() => setOpen(false)}
               >
                 {link.label}
