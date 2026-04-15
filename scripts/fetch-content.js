@@ -141,6 +141,7 @@ writeFileSync('src/data/partners.json', JSON.stringify(
     flag: p.flag || '',
     description: p.description || '',
     logoUrl: urlFor(p.logo, 400, 200),
+    website: p.website || null,
   })),
   null, 2
 ))

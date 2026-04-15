@@ -1,13 +1,55 @@
-import { useState } from 'react'
 import partners from '../data/partners.json'
 
-const allCountries = ['All', ...Array.from(new Set(partners.map((p) => p.country))).sort()]
+const gradients = [
+  'from-blue-900 to-slate-900',
+  'from-indigo-900 to-slate-900',
+  'from-slate-800 to-blue-950',
+  'from-blue-800 to-indigo-950',
+  'from-indigo-800 to-slate-900',
+  'from-slate-900 to-blue-900',
+  'from-blue-950 to-indigo-900',
+]
+
+function PartnerCard({ partner, gradientIndex }) {
+  const gradient = gradients[gradientIndex % gradients.length]
+
+  const card = (
+    <div className={`group relative flex flex-col justify-end min-h-56 rounded-2xl overflow-hidden bg-gradient-to-br ${gradient} p-5 transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl h-full`}>
+      {/* Subtle grid texture */}
+      <div
+        className="absolute inset-0 opacity-5"
+        style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,.3) 39px, rgba(255,255,255,.3) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,.3) 39px, rgba(255,255,255,.3) 40px)' }}
+      />
+
+      <div className="relative">
+        <span className="text-3xl block mb-3">{partner.flag}</span>
+        <h3 className="font-bold text-white leading-snug mb-1">{partner.name}</h3>
+        <p className="text-white/50 text-xs mb-3">{partner.country}</p>
+        <p className="text-white/60 text-xs leading-relaxed line-clamp-2">{partner.description}</p>
+
+        {partner.website && (
+          <div className="flex items-center gap-1.5 mt-4 text-xs font-semibold text-white/70 group-hover:text-white transition-colors">
+            Visit website
+            <svg className="w-3 h-3 translate-x-0 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+
+  if (partner.website) {
+    return (
+      <a href={partner.website} target="_blank" rel="noopener noreferrer" className="block h-full">
+        {card}
+      </a>
+    )
+  }
+  return <div className="h-full">{card}</div>
+}
 
 export default function Partners() {
-  const [filter, setFilter] = useState('All')
-
-  const filtered = filter === 'All' ? partners : partners.filter((p) => p.country === filter)
-
   return (
     <div>
       {/* Hero */}
@@ -21,48 +63,12 @@ export default function Partners() {
         </div>
       </section>
 
-      {/* Filter */}
-      <section className="bg-gray-50 border-b border-gray-200 py-4 sticky top-16 z-40">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-wrap gap-2">
-            {allCountries.map((country) => (
-              <button
-                key={country}
-                onClick={() => setFilter(country)}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                  filter === country
-                    ? 'bg-blue-700 text-white'
-                    : 'bg-white text-gray-600 border border-gray-200 hover:border-blue-300 hover:text-blue-700'
-                }`}
-              >
-                {country}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Partners grid */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <p className="text-sm text-gray-500 mb-6">
-            Showing {filtered.length} partner{filtered.length !== 1 ? 's' : ''}
-            {filter !== 'All' ? ` from ${filter}` : ''}
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filtered.map((partner) => (
-              <div
-                key={partner.id}
-                className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 hover:shadow-md transition-all hover:-translate-y-0.5"
-              >
-                {/* Logo placeholder */}
-                <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center mb-4 text-xl">
-                  {partner.flag}
-                </div>
-                <h3 className="font-bold text-gray-900 mb-1 leading-snug">{partner.name}</h3>
-                <span className="inline-block text-xs text-gray-500 mb-3">{partner.country}</span>
-                <p className="text-sm text-gray-600 leading-relaxed">{partner.description}</p>
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {partners.map((partner, i) => (
+              <PartnerCard key={partner.id} partner={partner} gradientIndex={i} />
             ))}
           </div>
         </div>

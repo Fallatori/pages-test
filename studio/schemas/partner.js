@@ -6,6 +6,7 @@ export default {
     { name: 'name', title: 'Organisation Name', type: 'string', validation: (R) => R.required() },
     { name: 'country', title: 'Country', type: 'string', validation: (R) => R.required() },
     { name: 'flag', title: 'Flag Emoji', type: 'string' },
+    { name: 'website', title: 'Website URL', type: 'url' },
     {
       name: 'description',
       title: 'Description',
