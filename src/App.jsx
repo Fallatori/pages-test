@@ -6,6 +6,7 @@ import About from './pages/About'
 import News from './pages/News'
 import Partners from './pages/Partners'
 import Demos from './pages/Demos'
+import DemoDetail from './pages/DemoDetail'
 import Events from './pages/Events'
 import Materials from './pages/Materials'
 import Contact from './pages/Contact'
@@ -22,6 +23,7 @@ export default function App() {
             <Route path="/news" element={<News />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/demos" element={<Demos />} />
+            <Route path="/demos/:slug" element={<DemoDetail />} />
             <Route path="/events" element={<Events />} />
             <Route path="/materials" element={<Materials />} />
             <Route path="/contact" element={<Contact />} />
